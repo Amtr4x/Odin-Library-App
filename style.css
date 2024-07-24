@@ -17,4 +17,106 @@
   font-size: 16.5px;
 }
 
+body {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(200px, 1fr));
 
+  main {
+    grid-column: 2 / 4;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    h1 {
+      text-align: center;
+      text-decoration: underline;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(autofill, minmax(1fr, 250px));
+      gap: 5px;
+
+      fieldset {
+        border-radius: 5px;
+        padding: 12px;
+        grid-column: 1 / end;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+      }
+
+      .title {
+        padding: 5px;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+
+      .author {
+        padding: 5px;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+
+      .pages {
+        padding: 5px;
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+
+        input[type="number"] {
+          padding-left: 10px;
+          width: 50px;
+          height: 25px;
+        }
+      }
+
+      .read {
+        padding: 5px;
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+      }
+
+      input[type="submit"],
+      input[type="reset"] {
+        background-color: transparent;
+        font-weight: bold;
+      }
+
+      input[type="submit"]:hover,
+      input[type="reset"]:hover,
+      input[type="submit"]:focus,
+      input[type="reset"]:focus {
+        transition-duration: 0.25s;
+        scale: 1.03;
+      }
+
+      input[type="submit"]:active,
+      input[type="reset"]:active {
+        transition-duration: 0.25s;
+        scale: 0.97;
+      }
+
+      input {
+        border-radius: 5px;
+        border: rgb(62, 62, 62) 1.6px solid;
+      }
+
+      input:hover,
+      input:focus {
+        border: #2c09b7 1.6px solid;
+        outline: #2c09b7 1.6px solid;
+      }
+
+      input:invalid {
+        border-color: #dc143c;
+      }
+    }
+  }
+
+  /* ********************************************************* Aside ************************************************************ */
+  aside {
+    grid-column: 5 / end;
+  }
+}
