@@ -52,13 +52,16 @@ function retrieveBook() {
       amountOfPages.value,
       isRead.checked,
     );
-    books.push(newBook);
 
-    title.value = "";
-    author.value = "";
-    amountOfPages.value = "";
-    isRead.checked = false;
-    addLastBook();
+    if (newBook.title && newBook.author && newBook.amountOfPages) {
+      books.push(newBook);
+
+      title.value = "";
+      author.value = "";
+      amountOfPages.value = "";
+      isRead.checked = false;
+      addLastBook();
+    }
   });
 }
 
