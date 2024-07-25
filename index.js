@@ -55,7 +55,13 @@ function retrieveBook() {
       isRead.checked,
     );
 
-    if (newBook.title && newBook.author && newBook.amountOfPages) {
+    if (
+      newBook.title &&
+      newBook.author &&
+      newBook.amountOfPages &&
+      Number(newBook.amountOfPages) > 0 &&
+      Number(newBook.amountOfPages) <= 5000
+    ) {
       books.push(newBook);
 
       title.value = "";
