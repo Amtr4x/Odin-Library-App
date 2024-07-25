@@ -25,6 +25,7 @@ function addLastBook() {
   authorName.textContent = lastBook.author;
   bookPages.textContent = `pages: ${lastBook.amountOfPages}`;
   bookRead.textContent = `${lastBook.read ? "is read!" : "not read yet"}`;
+  deleteButton.setAttribute("id", "del-btn");
 
   cardHead.appendChild(bookTitle);
   cardHead.appendChild(deleteButton);
@@ -32,6 +33,7 @@ function addLastBook() {
   cardFoot.appendChild(bookPages);
   cardFoot.appendChild(bookRead);
 
+  newCard.setAttribute("id", `${books.length - 1}`);
   newCard.appendChild(cardHead);
   newCard.appendChild(authorName);
   newCard.appendChild(cardFoot);
@@ -65,4 +67,15 @@ function retrieveBook() {
   });
 }
 
+function deleteBook() {
+  bookList.addEventListener("click", (elem) => {
+    const elemToRemove = elem.target.parentNode.parentNode;
+    if (elem.target.id === "del-btn" && elemToRemove) {
+      bookList.removeChild(elem.target.parentNode.parentNode);
+      books.splice(books.indexOf(elemToRemove.id));
+    }
+  });
+}
+
 retrieveBook();
+deleteBook();
