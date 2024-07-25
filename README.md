@@ -6,5 +6,5 @@ Simple book list to add and delete books you have read.
 
 The proposal of this app is to practice DOM manipulation.
 
-> [!WARN]
+> [!WARNING]
 This project is not a real product, is completely vulnerable to XSS not store information
