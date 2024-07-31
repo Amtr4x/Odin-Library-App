@@ -2,12 +2,46 @@ const books = [];
 const submit = document.querySelector("#submit-btn");
 const bookList = document.querySelector("#books-list");
 
-const Book = function (title, author, amountOfPages, read) {
-  this.title = title;
-  this.author = author;
-  this.amountOfPages = Number(amountOfPages);
-  this.read = Boolean(read);
-};
+class Book {
+  constructor(title, author, amountOfPages, read) {
+    this._title = title;
+    this._author = author;
+    this._amountOfPages = Number(amountOfPages);
+    this._read = Boolean(read);
+  }
+
+  get title() {
+    return this._title;
+  }
+
+  set title(title) {
+    this._title = title;
+  }
+
+  get author() {
+    return this._author;
+  }
+
+  set author(author) {
+    this._author = author;
+  }
+
+  get amountOfPages() {
+    return this._amountOfPages;
+  }
+
+  set amountOfPages(amountOfPages) {
+    this._amountOfPages = amountOfPages;
+  }
+
+  get read() {
+    return this._read;
+  }
+
+  set read(read) {
+    this._read = read;
+  }
+}
 
 function addLastBook() {
   const lastBook = books[books.length - 1];
